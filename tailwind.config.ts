@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 export default {
   content: [
@@ -9,8 +10,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: "#f1f1f1",
+        dark: "#101010",
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)", ...fontFamily.sans],
+        unbounded: ["var(--font-unbounded)", ...fontFamily.sans],
       },
     },
   },

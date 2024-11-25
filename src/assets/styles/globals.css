@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#mesh {
+  background-color: #711db0;
+  background-size: contain;
+  background-position: center;  
+  background-image: radial-gradient(at 61% 73%, #711db0 0%, transparent 60%),
+    radial-gradient(at 24% 26%, #c21292 0%, transparent 50%),
+    radial-gradient(at 51% 1%, #ef4040 0%, transparent 40%),
+    radial-gradient(at 94% 97%, #ffa732 0%, transparent 30%);
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .link::after {
+    background: #f1f1f1;
+  }
+
+  #logo {
+    fill: #f1f1f1;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .link::after {
+    background: #101010;
+  }
+
+  #logo {
+    fill: #101010;
+  }
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link:not(:hover)::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.link.active::after {
+  transform: none;
+}
+
+#logo {
+  transition: all 0.3s ease;
+  animation: rotate360 5s linear infinite;
+  animation-play-state: paused;
+}
+
+#logo:hover {
+  scale: 1.25;
+  animation-play-state: running;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
