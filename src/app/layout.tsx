@@ -1,8 +1,9 @@
 import "@/assets/styles/globals.css";
 import Nav from "@/components/Nav";
-import { metaData, viewPort } from "@/config/metaData";
+import { metaData, viewPort } from "@/config/meta";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { inter } from "./fonts";
+
 export const metadata = metaData;
 export const viewport = viewPort;
 

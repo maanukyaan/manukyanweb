@@ -3,12 +3,12 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function CircularText({ text }: { text: string }) {
-  const [positions, setPositions] = useState({ bottom: 75, right: 60 });
+  const [positions, setPositions] = useState({ bottom: 60, right: 60 });
 
   useEffect(() => {
     const updatePositions = () => {
       setPositions({
-        bottom: window.innerWidth > 500 ? 100 : 50,
+        bottom: window.innerWidth > 500 ? 100 : 20,
         right: window.innerWidth > 500 ? 100 : 20,
       });
     };
