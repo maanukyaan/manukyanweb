@@ -8,7 +8,7 @@ function Nav() {
   const lang = usePathname().split("/")[1];
 
   return (
-    <div className="bg-light dark:bg-dark w-full fixed left-0 top-0 z-[9999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] flex items-center justify-between">
+    <div className="bg-light dark:bg-dark w-full fixed left-0 top-0 z-[9999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between">
       <div className="left">
         <Logo />
       </div>

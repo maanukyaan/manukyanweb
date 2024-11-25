@@ -3,5 +3,6 @@ export interface Dictionary {
     h1: string;
     h2: string;
     cta: string;
+    circularText: string;
   };
 }
