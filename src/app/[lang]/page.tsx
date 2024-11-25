@@ -6,7 +6,7 @@ import { getDictionary } from "./i18n";
 export default async function Home({
   params,
 }: {
-  params: { lang: "en" | "ru" | "am" };
+  params: Promise<{ lang: "en" | "ru" | "am" }>;
 }) {
   const { lang } = await params;
   const i18n = await getDictionary(lang);
