@@ -1,7 +1,7 @@
-import CircularText from "@/components/@ui/CircularText";
 import CTAButton from "@/components/@ui/CTAButton";
-import { unbounded } from "../fonts";
-import { getDictionary } from "./i18n";
+import { getDictionary } from "@/config/i18n/i18n";
+import Header from "@/sections/Home/Header";
+import { unbounded } from "../../config/fonts";
 
 export default async function Home({
   params,
@@ -13,20 +13,14 @@ export default async function Home({
 
   return (
     <div className="font-inter flex flex-col items-center justify-center">
-      <header className="min-h-svh relative gridBackground flex flex-col items-center justify-center gap-y-5 lg:gap-y-7 overflow-hidden">
-        <h1
-          className={`text-center font-bold text-3xl lg:text-7xl max-w-[95%] lg:max-w-[unset] ${unbounded.className}`}
-        >
-          {i18n.Home.h1}
-        </h1>
-        <h2 className="text-center text-sm lg:text-lg max-w-[85%] lg:max-w-[800px]">
-          {i18n.Home.h2}
-        </h2>
-        <CTAButton href="https://whoiskenshi.t.me" text={i18n.Home.cta} />
-
-        <CircularText text={i18n.Home.circularText} />
-      </header>
-      <div className="meshBackground w-full h-screen rounded-t-[50px] flex flex-col items-center justify-center gap-y-5">
+      <Header
+        h1={i18n.Home.h1}
+        h2={i18n.Home.h2}
+        ctaButtonText={i18n.Home.cta}
+        ctaButtonLink="https://whoiskenshi.t.me"
+        circularText={i18n.Home.circularText}
+      />
+      <div className="meshBackground w-full h-screen rounded-[50px] flex flex-col items-center justify-center gap-y-5">
         <h3
           className={`text-center text-white font-bold text-3xl lg:text-7xl max-w-[95%] lg:max-w-[unset] ${unbounded.className}`}
         >

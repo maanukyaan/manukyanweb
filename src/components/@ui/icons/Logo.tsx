@@ -1,12 +1,11 @@
-export default function Logo({ size = 50 }) {
+export default function Logo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.0"
       viewBox="77 82.03 221 210.75"
-      width={size}
-      height={size}
       id="logo"
+      className="size-9 lg:size-14"
     >
       <defs>
         <clipPath id="a">

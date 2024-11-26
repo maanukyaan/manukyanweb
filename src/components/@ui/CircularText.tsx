@@ -28,7 +28,7 @@ export default function CircularText({ text }: { text: string }) {
       initial={{ bottom: -500, right: positions.right }}
       animate={{ bottom: positions.bottom, right: positions.right }}
       transition={{ duration: 1.5, ease: "backInOut" }}
-      className="size-32 lg:size-52 animate-rotate absolute"
+      className="size-24 lg:size-52 animate-rotate absolute"
     >
       <path
         id="circlePath"
