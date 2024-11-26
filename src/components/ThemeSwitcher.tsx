@@ -6,25 +6,29 @@ export default function ThemeSwitcher() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.setAttribute("data-theme", "dark");
+    if (savedTheme) {
+      setIsDark(savedTheme === "dark");
+      document.documentElement.setAttribute("data-theme", savedTheme);
     } else {
-      setIsDark(false);
-      document.documentElement.setAttribute("data-theme", "light");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setIsDark(prefersDarkScheme);
+      document.documentElement.setAttribute(
+        "data-theme",
+        prefersDarkScheme ? "dark" : "light"
+      );
     }
   }, []);
 
   const toggleTheme = () => {
     setIsDark((prev) => {
       const newTheme = !prev;
-      if (newTheme) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-      }
+      const theme = newTheme ? "dark" : "light";
+
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+
       return newTheme;
     });
   };
