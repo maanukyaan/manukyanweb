@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./@ui/icons/Logo";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 function Nav() {
   const lang = usePathname().split("/")[1];
@@ -38,6 +39,8 @@ function Nav() {
             </Link>
           </motion.div>
         ))}
+
+        <ThemeSwitcher />
       </div>
     </motion.nav>
   );

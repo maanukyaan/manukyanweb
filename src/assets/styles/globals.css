@@ -16,6 +16,17 @@
   }
 }
 
+/* Переменные для кастомных тем */
+[data-theme="dark"] {
+  --grid: #f1f1f110;
+  --main-color: #f1f1f1;
+}
+
+[data-theme="light"] {
+  --grid: #10101010;
+  --main-color: #101010;
+}
+
 .gridBackground {
   background-image: linear-gradient(var(--grid) 0.1em, transparent 0.1em),
     linear-gradient(90deg, var(--grid) 0.1em, transparent 0.1em);
