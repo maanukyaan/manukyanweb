@@ -26,7 +26,7 @@ function Triangle() {
       }`}
     >
       <Image
-        src="/triangle.png"
+        src="/triangle.webp"
         alt="Abstract triangle"
         width={500}
         height={500}
