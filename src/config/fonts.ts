@@ -1,15 +1,14 @@
-import { Inter, Noto_Sans_Armenian, Unbounded } from "next/font/google";
+import { Inter, Unbounded } from "next/font/google";
+import localFont from "next/font/local";
 
 export const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-unbounded",
 });
 
 export const inter = Inter({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
 });
 
-export const notoSansArmenian = Noto_Sans_Armenian({
-  subsets: ["armenian"],
+export const square = localFont({
+  src: "../assets/fonts/Square/Square.ttf",
 });

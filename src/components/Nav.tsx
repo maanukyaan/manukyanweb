@@ -43,7 +43,7 @@ function Nav() {
 
   return (
     <motion.nav
-      className="backdrop-blur w-full fixed left-0 top-0 z-[9999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between"
+      className="backdrop-blur w-full fixed left-0 top-0 z-[999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between"
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100 }}
       transition={{

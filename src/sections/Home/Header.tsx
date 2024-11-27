@@ -2,7 +2,8 @@
 
 import CircularText from "@/components/@ui/CircularText";
 import CTAButton from "@/components/@ui/CTAButton";
-import { notoSansArmenian, unbounded } from "@/config/fonts";
+import Triangle from "@/components/@ui/icons/Triangle";
+import { square, unbounded } from "@/config/fonts";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
@@ -26,10 +27,12 @@ function Header({
       <div className="absolute left-[-30vw] lg:left-[-15%] bottom-[-10%] lg:bottom-[0%] size-[350px] lg:size-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(219,0,255,.3),rgba(255,255,255,0))]"></div>
       <div className="absolute right-[-50%] lg:right-[-15%] top-[-10%] lg:top-[5%] size-[350px] lg:size-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,165,0,.3),rgba(255,255,255,0))]"></div>
 
+      <Triangle />
+
       <motion.h1
         className={`text-center font-black uppercase text-3xl lg:text-[65px] lg:leading-tight max-w-[95%] lg:max-w-[85%] ${
-          isArmenian ? notoSansArmenian.className : unbounded.className
-        }`}
+          isArmenian ? square.className : unbounded.className
+        } ${isArmenian && "tracking-wide"} ${isArmenian && "lg:text-[75px]"}`}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
