@@ -10,4 +10,6 @@ export const inter = Inter({
   variable: "--font-inter",
 });
 
-export const notoSansArmenian = Noto_Sans_Armenian({});
+export const notoSansArmenian = Noto_Sans_Armenian({
+  subsets: ["armenian"],
+});
