@@ -1,33 +1,83 @@
 "use client";
 
+import { throttle } from "@/utils/throttle";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import Logo from "./@ui/icons/Logo";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 function Nav() {
   const lang = usePathname().split("/")[1];
 
+  const [isVisible, setIsVisible] = useState(true);
+  const [hasAppeared, setHasAppeared] = useState(false);
+
+  useEffect(() => {
+    if (!hasAppeared) {
+      setHasAppeared(true);
+    }
+  }, [hasAppeared]);
+
+  useEffect(() => {
+    let lastScrollY = 0;
+
+    const handleScroll = throttle(() => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 30) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    }, 200);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <motion.nav
-      className="bg-light dark:bg-dark w-full fixed left-0 top-0 z-[9999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between"
+      className="backdrop-blur w-full fixed left-0 top-0 z-[9999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between"
       initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: "backInOut", delay: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100 }}
+      transition={{
+        duration: hasAppeared ? 0.85 : 1.2,
+        ease: "backInOut",
+        delay: hasAppeared ? 0 : 1,
+      }}
     >
       <Logo />
-      <div className="right flex gap-x-3">
-        {["en", "ru", "am"].map((language, index) => (
+      <motion.div
+        className="right flex gap-x-3"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.3,
+              delayChildren: 2,
+              duration: 0.5,
+              ease: "easeInOut",
+            },
+          },
+        }}
+      >
+        {["en", "ru", "am"].map((language) => (
           <motion.div
             key={language}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1.3,
-              delay: 2 + index * 0.2,
-              ease: "easeIn",
+            variants={{
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0 },
             }}
+            transition={{ duration: 0.6 }}
           >
             <Link
               href={`/${language}`}
@@ -40,8 +90,14 @@ function Nav() {
           </motion.div>
         ))}
 
-        <ThemeSwitcher />
-      </div>
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 2.5 }}
+        >
+          <ThemeSwitcher />
+        </motion.div>
+      </motion.div>
     </motion.nav>
   );
 }

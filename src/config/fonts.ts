@@ -1,4 +1,4 @@
-import { Inter, Stalinist_One, Unbounded } from "next/font/google";
+import { Inter, Noto_Sans_Armenian, Unbounded } from "next/font/google";
 
 export const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
@@ -10,7 +10,4 @@ export const inter = Inter({
   variable: "--font-inter",
 });
 
-export const stalinistOne = Stalinist_One({
-  subsets: ["latin", "cyrillic"],
-  weight: "400",
-});
+export const notoSansArmenian = Noto_Sans_Armenian({});

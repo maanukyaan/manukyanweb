@@ -20,15 +20,16 @@ export default async function Home({
         ctaButtonLink="https://whoiskenshi.t.me"
         circularText={i18n.Home.circularText}
       />
+
       <div className="meshBackground w-full h-screen rounded-[50px] flex flex-col items-center justify-center gap-y-5">
         <h3
           className={`text-center text-white font-bold text-3xl lg:text-7xl max-w-[95%] lg:max-w-[unset] ${unbounded.className}`}
-        >
-          {i18n.Home.h1}
-        </h3>
-        <h4 className="text-center text-white text-sm lg:text-lg max-w-[85%] lg:max-w-[800px]">
-          {i18n.Home.h2}
-        </h4>
+          dangerouslySetInnerHTML={{ __html: i18n.Home.h1 }}
+        ></h3>
+        <h4
+          className="text-center text-white text-sm lg:text-lg max-w-[85%] lg:max-w-[800px]"
+          dangerouslySetInnerHTML={{ __html: i18n.Home.h2 }}
+        ></h4>
         <CTAButton href="https://whoiskenshi.t.me" text={i18n.Home.cta} />
       </div>
     </div>

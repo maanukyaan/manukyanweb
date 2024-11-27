@@ -5,7 +5,7 @@ export default function Logo() {
       version="1.0"
       viewBox="77 82.03 221 210.75"
       id="logo"
-      className="size-9 lg:size-14"
+      className="size-7 lg:size-14"
     >
       <defs>
         <clipPath id="a">
