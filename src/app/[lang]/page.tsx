@@ -7,15 +7,18 @@ export default async function Home({
   params: Promise<{ lang: "en" | "ru" | "am" }>;
 }) {
   const { lang } = await params;
-  const i18n = await getDictionary(lang);
+  const i18n = (await getDictionary(lang)) as Record<
+    string,
+    Record<string, string>
+  >;
 
   return (
     <>
       <Header
-        h1={i18n.Home.h1}
+        title={i18n.Home.title}
         h2={i18n.Home.h2}
-        ctaButtonText={i18n.Home.cta}
-        ctaButtonLink="https://whoiskenshi.t.me"
+        ctaButtonText={i18n.Home.ctaButtonText}
+        ctaButtonLink={i18n.Home.ctaButtonLink}
         circularText={i18n.Home.circularText}
       />
     </>

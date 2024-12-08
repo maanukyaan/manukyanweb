@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Logo from "./@ui/icons/Logo";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-function Nav() {
+export default function Nav() {
   const lang = usePathname().split("/")[1];
 
   const [isVisible, setIsVisible] = useState(true);
@@ -43,7 +43,7 @@ function Nav() {
 
   return (
     <motion.nav
-      className="backdrop-blur w-full fixed left-0 top-0 z-[999] py-5 px-8 lg:py-7 lg:px-14 rounded-b-[30px] border-b border-[#afafaf] dark:border-[#525252] flex items-center justify-between"
+      className="fixed left-0 top-0 z-[999] flex w-full items-center justify-between rounded-b-[30px] border-b border-[#afafaf] px-8 py-5 backdrop-blur dark:border-[#525252] lg:px-14 lg:py-7"
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100 }}
       transition={{
@@ -70,7 +70,7 @@ function Nav() {
           },
         }}
       >
-        {["en", "ru", "am"].map((language) => (
+        {["en", "ru"].map((language) => (
           <motion.div
             key={language}
             variants={{
@@ -101,5 +101,3 @@ function Nav() {
     </motion.nav>
   );
 }
-
-export default Nav;

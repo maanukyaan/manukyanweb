@@ -33,8 +33,8 @@ export const metaData: Metadata = {
     title: "Manukyan.Web – Современная веб-разработка",
     description:
       "Получите профессиональные услуги по разработке веб-приложений с использованием React, Next.js и TypeScript. Высокая производительность и масштабируемость – наш приоритет.",
-    url: "https://manukyanweb.vercel.app",
-    images: "https://manukyanweb.vercel.app/logo.svg",
+    url: "https://manukyan.tech",
+    images: "https://manukyan.tech/logo.svg",
     type: "website",
   },
   robots: {

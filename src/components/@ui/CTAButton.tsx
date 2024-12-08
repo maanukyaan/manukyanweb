@@ -1,10 +1,16 @@
-function CTAButton({ text, href }: { text: string; href: string }) {
+export default function CTAButton({
+  text,
+  href,
+}: {
+  text: string;
+  href: string;
+}) {
   return (
     <a
-      className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md px-4 font-medium bg-dark text-light dark:bg-light dark:text-dark"
+      className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-dark px-4 font-medium text-light dark:bg-light dark:text-dark"
       href={href}
     >
-      <span className="text-sm lg:text-base font-medium">{text}</span>
+      <span className="text-sm font-medium lg:text-base">{text}</span>
       <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-1 group-hover:opacity-100">
         <svg
           stroke="currentColor"
@@ -22,5 +28,3 @@ function CTAButton({ text, href }: { text: string; href: string }) {
     </a>
   );
 }
-
-export default CTAButton;
