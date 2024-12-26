@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/",
-        destination: "/ru",
+        destination: "/en",
         permanent: false,
       },
     ];
