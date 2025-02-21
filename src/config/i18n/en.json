@@ -1,9 +1,31 @@
 {
   "Home": {
-    "title": "I create projects that take <u>your business</u> to a <i>new</i> level",
+    "title": "I create projects that will take <i>your</i> business to a <i>new</i> level",
     "h2": "The websites and applications I create become key drivers of <b>your business</b> growth, enhancing <b>client interactions</b> and <b>dramatically increasing conversions</b>. My goal is to help your brand not just <b><u>stand out</u></b>, but <b><i>dominate</i></b> the market, strengthening its position and claiming leadership in the digital space.",
     "ctaButtonText": "Contact me",
     "ctaButtonLink": "https://t.me/m/uDvZtp0IOTli",
     "circularText": "High-Quality Website Development •"
+  },
+  "About": {
+    "marquee": [
+      "Web Developer",
+      "Coder",
+      "Tech Enthusiast",
+      "Digital Craftsman",
+      "Tech Innovator",
+      "Web Architect",
+      "App Developer",
+      "Framework Fanatic",
+      "Fullstack Developer",
+      "Web Developer",
+      "Coder",
+      "Tech Enthusiast",
+      "Digital Craftsman",
+      "Tech Innovator",
+      "Web Architect",
+      "App Developer",
+      "Framework Fanatic",
+      "Fullstack Developer"
+    ]
   }
 }

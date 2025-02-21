@@ -28,19 +28,22 @@
 }
 
 .gridBackground {
-  background-image: linear-gradient(var(--grid) 0.1em, transparent 0.1em),
+  background-image:
+    linear-gradient(var(--grid) 0.1em, transparent 0.1em),
     linear-gradient(90deg, var(--grid) 0.1em, transparent 0.1em);
   background-size: 3em 3em;
 }
 
-.meshBackground {
-  background-color: #711db0;
-  background-size: contain;
-  background-position: center;
-  background-image: radial-gradient(at 61% 73%, #711db0 0%, transparent 60%),
-    radial-gradient(at 24% 26%, #c21292 0%, transparent 50%),
-    radial-gradient(at 51% 1%, #ef4040 0%, transparent 40%),
-    radial-gradient(at 94% 97%, #ffa732 0%, transparent 30%);
+.pointsBackground {
+  @apply absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#353535_1px,transparent_1px)] [background-size:16px_16px];
+}
+
+.pinkBall {
+  @apply absolute bottom-[-10%] left-[-30vw] size-[350px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(219,0,255,.3),rgba(255,255,255,0))] lg:bottom-[0%] lg:left-[-15%] lg:size-[500px]
+}
+
+.orangeBall {
+  @apply absolute right-[-50%] top-[-10%] size-[350px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,165,0,.3),rgba(255,255,255,0))] lg:right-[-15%] lg:top-[5%] lg:size-[500px]
 }
 
 .link {

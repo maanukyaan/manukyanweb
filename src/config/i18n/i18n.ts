@@ -1,7 +1,16 @@
 import "server-only";
 
 type Dictionary = {
-  [key: string]: string | Record<string, string>;
+  Home: {
+    title: string;
+    h2: string;
+    ctaButtonText: string;
+    ctaButtonLink: string;
+    circularText: string;
+  };
+  About: {
+    marquee: string[];
+  };
 };
 
 const dictionaries: Record<string, () => Promise<Dictionary>> = {

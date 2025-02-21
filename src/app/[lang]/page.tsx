@@ -1,4 +1,5 @@
 import { getDictionary } from "@/config/i18n/i18n";
+import About from "@/sections/Home/About";
 import Header from "@/sections/Home/Header";
 
 export default async function Home({
@@ -7,10 +8,7 @@ export default async function Home({
   params: Promise<{ lang: "en" | "ru" | "am" }>;
 }) {
   const { lang } = await params;
-  const i18n = (await getDictionary(lang)) as Record<
-    string,
-    Record<string, string>
-  >;
+  const i18n = await getDictionary(lang);
 
   return (
     <>
@@ -21,6 +19,7 @@ export default async function Home({
         ctaButtonLink={i18n.Home.ctaButtonLink}
         circularText={i18n.Home.circularText}
       />
+      <About marquee={i18n.About.marquee} />
     </>
   );
 }
