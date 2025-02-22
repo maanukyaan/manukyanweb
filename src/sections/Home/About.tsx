@@ -4,13 +4,12 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-export default function About({
-  marquee,
-  title,
-}: {
+interface IAboutProps {
   marquee: string[];
   title: string;
-}) {
+}
+
+export default function About({ marquee, title }: IAboutProps) {
   return (
     <div className="relative flex h-screen max-h-svh flex-col pt-1">
       <div className="pointsBackground"></div>

@@ -19,8 +19,6 @@ export default function Header({
   ctaButtonLink,
   circularText,
 }: IHeaderProps) {
-  console.log("title", title);
-  console.log("h2", h2);
   return (
     <header className="gridBackground relative flex min-h-svh w-full flex-col items-center justify-center gap-y-5 overflow-hidden lg:gap-y-7">
       <div className="pinkBall"></div>

@@ -24,15 +24,15 @@ export default function Nav() {
     let lastScrollY = 0;
 
     const handleScroll = throttle(() => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 30) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-
-      lastScrollY = currentScrollY;
+      requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 30) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+        lastScrollY = currentScrollY;
+      });
     }, 200);
 
     window.addEventListener("scroll", handleScroll);
@@ -47,9 +47,9 @@ export default function Nav() {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100 }}
       transition={{
-        duration: hasAppeared ? 0.85 : 1.2,
-        ease: "backInOut",
-        delay: hasAppeared ? 0 : 1,
+        duration: 0.75,
+        ease: "circInOut",
+        delay: hasAppeared ? 0 : 1.1,
       }}
     >
       <Logo />
@@ -82,7 +82,7 @@ export default function Nav() {
             <Link
               href={`/${language}`}
               className={`link ${
-                lang === language && "active"
+                lang === language ? "active" : ""
               } text-sm lg:text-base`}
             >
               {language.toUpperCase()}
