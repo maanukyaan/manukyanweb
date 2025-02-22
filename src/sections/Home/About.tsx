@@ -19,7 +19,7 @@ export default function About({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "backInOut" }}
-        className="absolute top-1 w-full border-2 border-x-0 py-5"
+        className="absolute top-1 w-full border-2 border-x-0 border-dark py-5 dark:border-light"
       >
         <Marquee>
           {marquee.map((text, index) => (
