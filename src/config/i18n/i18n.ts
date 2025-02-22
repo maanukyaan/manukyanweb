@@ -10,6 +10,7 @@ type Dictionary = {
   };
   About: {
     marquee: string[];
+    title: string;
   };
 };
 

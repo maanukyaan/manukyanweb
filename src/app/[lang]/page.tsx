@@ -19,7 +19,7 @@ export default async function Home({
         ctaButtonLink={i18n.Home.ctaButtonLink}
         circularText={i18n.Home.circularText}
       />
-      <About marquee={i18n.About.marquee} />
+      <About marquee={i18n.About.marquee} title={i18n.About.title} />
     </>
   );
 }

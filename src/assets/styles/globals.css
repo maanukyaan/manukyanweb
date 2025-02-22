@@ -101,3 +101,23 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+    background-color: #ec4899; /* Начальный цвет */
+  }
+  50% {
+    background-position: 100% 50%;
+    background-color: #f43f5e; /* Средний цвет */
+  }
+  100% {
+    background-position: 0% 50%;
+    background-color: #ec4899; /* Возврат к начальному */
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 6s infinite ease-in-out;
+}

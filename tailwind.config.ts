@@ -9,6 +9,10 @@ export default {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      fontFamily: {
+        unbounded: "var(--font-unbounded)",
+        inter: "var(--font-inter)",
+      },
       colors: {
         light: "#f1f1f1",
         dark: "#101010",

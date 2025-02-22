@@ -2,7 +2,6 @@
 
 import CircularText from "@/components/@ui/CircularText";
 import CTAButton from "@/components/@ui/CTAButton";
-import { unbounded } from "@/config/fonts";
 import { motion } from "motion/react";
 
 interface IHeaderProps {
@@ -26,7 +25,7 @@ export default function Header({
       <div className="orangeBall"></div>
 
       <motion.h1
-        className={`max-w-[95%] bg-gradient-to-r from-black to-gray-500 bg-clip-text text-center text-3xl font-black uppercase text-transparent dark:from-gray-500 dark:via-gray-300 dark:to-gray-100 lg:max-w-[85%] lg:text-[65px] lg:leading-tight ${unbounded.className}`}
+        className="max-w-[95%] bg-gradient-to-r from-black to-gray-500 bg-clip-text text-center font-unbounded text-3xl font-black uppercase text-transparent dark:from-gray-500 dark:via-gray-300 dark:to-gray-100 lg:max-w-[85%] lg:text-[65px] lg:leading-tight"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
